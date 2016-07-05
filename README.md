@@ -1,6 +1,4 @@
-# post-fix-booleans-clojure
-
-Solution to kata of post-fixing logical operators to booleans
+# Solution to kata of post-fixing logical operators to booleans
 
 1 for Boolean true, A for logical and, X for logical exclusive-or,
 0 for Boolean false, R for logical or, N for logical negation.
