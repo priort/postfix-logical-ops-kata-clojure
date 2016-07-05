@@ -1,14 +1,15 @@
 # post-fix-booleans-clojure
 
-A Clojure library designed to ... well, that part is up to you.
+Solution to kata of post-fixing logical operators to booleans
 
-## Usage
+1 for Boolean true, A for logical and, X for logical exclusive-or,
+0 for Boolean false, R for logical or, N for logical negation.
 
-FIXME
+solution parses an expression string
+e.g "3 0 1 R" evaluates to true
+"9 1 0 A 1 N 0 N A R" evaluates to false
+(the number at the start of the line signifies number of tokens - it is not actually needed in the solution code)
 
-## License
 
-Copyright © 2016 FIXME
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+
