@@ -4,9 +4,8 @@
 0 for Boolean false, R for logical or, N for logical negation.
 
 solution parses an expression string
-e.g "3 0 1 R" evaluates to true
-"9 1 0 A 1 N 0 N A R" evaluates to false
-(the number at the start of the line signifies number of tokens - it is not actually needed in the solution code)
+e.g "0 1 R" evaluates to true
+"1 0 A 1 N 0 N A R" evaluates to false
 
 
 
