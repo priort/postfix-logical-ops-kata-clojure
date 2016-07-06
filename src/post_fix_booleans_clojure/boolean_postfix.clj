@@ -13,15 +13,14 @@
 (defn ^:private postfix-not [[b1 & t]] (conj t (not b1)))
 
 (defn expr-str->functions-on-stack [postfix-expression-str]
-  (let [syntax-map {:1       push-true-val-to-stack
-                    :0       push-false-val-to-stack
-                    :R       postfix-or
-                    :A       postfix-and
-                    :X       postfix-x-or
-                    :N       postfix-not
-                    }
-        post-fix-expr-minus-spaces-and-num-tokens-char (filter #(not= % \space) postfix-expression-str)]
-    (map #((keyword (str %)) syntax-map) post-fix-expr-minus-spaces-and-num-tokens-char)))
+  (let [syntax-map {:1 push-true-val-to-stack
+                    :0 push-false-val-to-stack
+                    :R postfix-or
+                    :A postfix-and
+                    :X postfix-x-or
+                    :N postfix-not
+                    }]
+    (map #((keyword (str %)) syntax-map) (filter #(not= % \space) postfix-expression-str))))
 
 (defn eval [postfix-expression-str]
   (first (reduce #(%2 %1) (list) (expr-str->functions-on-stack postfix-expression-str))))
