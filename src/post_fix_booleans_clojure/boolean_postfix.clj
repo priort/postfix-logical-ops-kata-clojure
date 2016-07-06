@@ -12,7 +12,7 @@
 
 (defn ^:private postfix-not [[b1 & t]] (conj t (not b1)))
 
-(defn expr-str->functions-on-stack [postfix-expression-str]
+(defn expr-str->functions-operating-on-stack [postfix-expression-str]
   (let [syntax-map {:1 push-true-val-to-stack
                     :0 push-false-val-to-stack
                     :R postfix-or
@@ -23,7 +23,7 @@
     (map #((keyword (str %)) syntax-map) (filter #(not= % \space) postfix-expression-str))))
 
 (defn eval [postfix-expression-str]
-  (first (reduce #(%2 %1) (list) (expr-str->functions-on-stack postfix-expression-str))))
+  (first (reduce #(%2 %1) (list) (expr-str->functions-operating-on-stack postfix-expression-str))))
 
 
 
